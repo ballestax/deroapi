@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Http\Controllers\Election;
+
+use App\Election;
+use App\Http\Controllers\ApiController;
+use Illuminate\Http\Request;
+
+class ElectionCandidateController extends ApiController
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Election $election)
+    {
+        $candidates = $election->candidates;
+
+        return $this->showAll($candidates);
+    }
+    
+}

@@ -13,6 +13,33 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+Route::resource('candidates', 'Candidate\CandidateController', ['except' => ['create', 'edit']]);
+
+/*
+*	Elections
+*/
+Route::resource('elections', 'Election\ElectionController', ['except' => ['create', 'edit']]);
+Route::resource('elections.candidates', 'Election\ElectionCandidateController', ['only' => ['index']]);
+Route::resource('elections.voting_places', 'Election\ElectionVotingPlaceController', ['only' => ['index']]);
+
+/*
+*	Voting places
+*/
+Route::resource('voting_places', 'VotingPlace\VotingPlaceController', ['except' => ['create', 'edit']]);
+Route::resource('voting_places.voting_tables', 'VotingPlace\VotingPlaceVotingTableController', ['only' => ['index']]);
+Route::resource('voting_places.witnesses', 'VotingPlace\VotingPlaceWitnessController', ['only' => ['index']]);
+
+
+/*
+*	Voting tables
+*/
+Route::resource('voting_tables', 'VotingTable\VotingTableController', ['except' => ['create', 'edit']]);
+Route::resource('voting_tables.voting_places', 'VotingTable\VotingTableVotingPlaceController', ['only' => ['index']]);
+
+/*
+*	Witness
+*/
+Route::resource('witnesses', 'Witness\WitnessController', ['except' => ['create', 'edit']]);
+Route::resource('witnesses.voting_places', 'Witness\WitnessVotingPlaceController', ['only' => ['index']]);
+Route::resource('witnesses.voting_tables', 'Witness\WitnessVotingTableController', ['only' => ['index']]);

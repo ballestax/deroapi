@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/deroapi":{"type":null,"mount_options":["uid=1000","gid=1000"],"guestpath":"/home/vagrant/deroapi","hostpath":"/home/lrod/Develop/www/deroapi","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/lrod/Develop/www/deroapi","disabled":false,"__vagrantfile":true}}}
