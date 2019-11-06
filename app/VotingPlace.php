@@ -39,7 +39,7 @@ class VotingPlace extends Model
 
    public function elections()
    {
-   	  return $this->belongsToMany(Election::class);
+   	  return $this->belongsToMany(Election::class, 'election_voting_place');
    }
 
 }

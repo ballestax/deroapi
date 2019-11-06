@@ -16,14 +16,16 @@ class E14Card extends Model
     protected $fillable =[
     	'blank_votes',
     	'null_votes',
-    	'unmarked_votes',
+    	'unmarks_votes',
     	'total_votes',
     	'is_recount',
-    	'is_incineration'
+    	'is_incineration',
+        'path',
+        'voting_table_id'
     ];
 
-    public function votingTable()
+    /*public function votingTable()
     {
         return $this->belongsTo(VotingTable::class);
-    }
+    }*/
 }

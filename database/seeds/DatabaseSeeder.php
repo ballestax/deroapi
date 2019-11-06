@@ -45,8 +45,8 @@ class DatabaseSeeder extends Seeder
         factory(Candidate::class, $candidateQuantity)->create();
         factory(Witness::class, $witnessQuantity)->create();
         factory(VotingPlace::class, $votingPlaceQuantity)->create();
-        factory(E14Card::class, $votingTableQuantity)->create();
+        //factory(E14Card::class, $votingTableQuantity)->create();
 
-        //factory(VotingTable::class, $votingTableQuantity)->create();
+        factory(VotingTable::class, $votingTableQuantity)->create();
     }
 }

@@ -94,6 +94,7 @@ $factory->define(E14Card::class, function (Faker $faker) {
     	'total_votes'=> $faker->numberBetween(0,100),
     	'is_recount'=> $faker->numberBetween(0,1),
     	'is_incineration'=> $faker->numberBetween(0,1),
+        'path' => '/'.$faker->word,
     	'voting_table_id' => factory(VotingTable::class)->create()->id
     ];
 });

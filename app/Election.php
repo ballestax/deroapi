@@ -12,6 +12,8 @@ class Election extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
+
+    protected $appends = ['candidates'];
     
     protected $fillable =[    	
     	'scope',
@@ -26,6 +28,11 @@ class Election extends Model
 
     public function votingPlaces()
     {
-    	return $this->belongsToMany(VotingPlace::class);
+    	return $this->belongsToMany(VotingPlace::class, 'election_voting_place');
+    }
+
+    public function getCandidatesAttribute()
+    {
+        return $this->candidates()->get();
     }
 }

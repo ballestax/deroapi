@@ -21,11 +21,12 @@ class CreateE14CardsTable extends Migration
             $table->integer('total_votes');
             $table->boolean('is_recount');
             $table->boolean('is_incineration');
+            $table->string('path');
             $table->bigInteger('voting_table_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('voting_table_id')->references('id')->on('voting_tables');
+            //$table->foreign('voting_table_id')->references('id')->on('voting_tables');
 
         });
     }

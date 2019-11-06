@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\VotingTable;
 use App\PoliticalParty;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -46,6 +47,11 @@ class Candidate extends Model
     public function election()
     {
     	return $this->belongsTo(Election::class);
+    }
+
+    public function votingTables()
+    {
+        return $this->belongsToMany(VotingTable::class, 'candidate_voting_table')->withPivot('votes');
     }
 
     

@@ -16,8 +16,7 @@ class WitnessVotingPlaceController extends ApiController
     public function index(Witness $witness)
     {
         $votingPlace = $witness->votingTables()->votingPlace()            
-            ->get()
-            ->unique();
+            ->get();
 
         return $this->showAll($votingPlace);
     }
